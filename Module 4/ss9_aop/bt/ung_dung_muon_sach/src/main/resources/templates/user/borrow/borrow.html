@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>Xác nhận thông tin mượn</h1>
+<div th:insert="~{home/header::header_user}"></div>
+
+<form  th:action="@{/user/do_borrow}" method="post" th:object="${borrow}">
+    <table border="2">
+        <tr>
+            <th>ID sách</th>
+            <td><input th:value="*{book.name}" th:field="*{book.id}"></td>
+        </tr>
+        <tr>
+            <th>Mã mượn sách</th>
+            <td><input th:field="*{codeBorrow}"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Borrow"></td>
+        </tr>
+    </table>
+</form>
+<p th:text="${message}"></p>
+</body>
+</html>

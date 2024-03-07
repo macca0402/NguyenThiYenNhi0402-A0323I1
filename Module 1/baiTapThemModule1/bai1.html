@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhap n");
+    } while (n > 50);
+    let mang = new Array(n);
+    let mang2 = new Array();
+    for (let i = 0; i < mang.length; i++) {
+        mang[i] = +prompt("Nhap gia tri thu:" + i);
+    }
+    for (let i = 0; i < mang.length; i++) {
+        document.writeln(mang[i] + "<br>");
+    }
+    for (let i = 0; i < mang.length; i++) {
+        if (mang[i] % 5 == 0 && i % 3 == 0) {
+            mang2.push(mang[i]);
+        }
+    }
+    let sum = 0;
+    for (let i = 0; i < mang2.length; i++) {
+        sum = sum + mang2[i];
+    }
+    let trungBinh = sum / mang2.length;
+    document.writeln("Gia tri trung binh: " + trungBinh);
+
+</script>
+
+</body>
+</html>

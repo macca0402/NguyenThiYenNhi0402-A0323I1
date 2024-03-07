@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        td, th {
+
+            padding: 8px;
+            text-align: center;
+        }
+
+        table {
+            font-family: arial;
+
+            width: 100%;
+
+        }
+
+        form {
+            width: 1000px;
+            height: 400px;
+            background-color: bisque;
+            padding: 10px 10px 10px 10px;
+        }
+
+        button {
+            font-size: 25px;
+            width: 100%;
+            height: 50px;
+        }
+
+        select {
+            font-size: 25px;
+            width: 100%;
+            height: 50px;
+        }
+
+        input {
+            font-size: 25px;
+            width: 100%;
+            height: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+<center>
+    <form action="#" method="get">
+        <h1 style="text-align: center">ỨNG DỤNG CHUYỂN ĐỔI TIỀN TỆ</h1>
+        <table>
+            <tr>
+                <td>
+                    <h3>Amount</h3>
+                </td>
+                <td>
+                    <h3>From Currency</h3>
+                </td>
+                <td>
+                    <h3>To Currency</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="data">
+                </td>
+                <td>
+                    <select id="from">
+                        <option>Viet Nam</option>
+                        <option>USA</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="to">
+                        <option>Viet Nam</option>
+                        <option>USA</option>
+
+                    </select>
+                </td>
+                <td>
+                    <button onclick="calculate()">Convert</button>
+                </td>
+            </tr>
+            <tr id="result">
+                <th colspan="4"></th>
+            </tr>
+        </table>
+    </form>
+
+</center>
+</body>
+
+<script>
+
+
+    function calculate() {
+        let amount = document.getElementById("data").value;
+        let fromCurrency = document.getElementById("from").value;
+        let toCurrency = document.getElementById("to").value;
+        let result;
+        if (fromCurrency == "Viet Nam" && toCurrency == "USA") {
+            result = amount / 23000;
+            //alert("RESULT:  "+result+"$");
+            document.getElementById("result").innerText = "RESULT:    " + result + "$";
+        } else if (fromCurrency == "USA" && toCurrency == "Viet Nam") {
+            result = amount * 23000;
+            // alert("RESULT:  "+result+"$");
+            // document.write("RESULT:  "+result+"VND");
+            document.getElementById("result").innerText = "RESULT:    " + result + "VND";
+        } else if (fromCurrency == "Viet Nam" && toCurrency == "Viet Nam") {
+            result = amount;
+            // alert("RESULT:  "+result+"$");
+            //document.write("RESULT:  "+result+"VND");
+            document.getElementById("result").innerText = "RESULT:    " + result + "VND";
+        } else if (fromCurrency == "USA" && toCurrency == "USA") {
+            result = amount;
+            // alert("RESULT:  "+result+"$");
+            // document.write("RESULT:  "+result+"$");
+            document.getElementById("result").innerText = "RESULT:    " + result + "$";
+        }
+
+    }
+</script>
+</html>

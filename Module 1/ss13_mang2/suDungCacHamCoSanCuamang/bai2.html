@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const number = window.prompt();
+    const number1 = number.toString();
+    const number2 = [number1[0]];
+
+    for (var i = 1; i < number1.length; i++) {
+        if ((number1[i - 1] % 2 === 0) && (number1[i] % 2 === 0)) {
+            number2.push('-', number1[i]);
+        } else {
+            number2.push(number1[i]);
+        }
+    }
+    console.log(number2.join(''));
+</script>
+
+</body>
+</html>

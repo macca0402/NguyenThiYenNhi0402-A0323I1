@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+<div th:insert="~{/view/header::menu}"></div>
+<form th:object="${blog}">
+    ID:
+    <br>
+    <input type="text" readonly th:field="*{id}">
+    <br>
+    Author:
+    <br>
+    <input type="text" th:field="*{author}">
+    <br>
+    Category:
+    <br>
+    <input th:field="*{category.name}" readonly>
+    <br>
+    Date create:
+    <br>
+    <input type="date"  readonly th:field="*{dateCreate}">
+    <br>
+    Title:
+    <br>
+    <input type="text" th:field="*{title}">
+    <br>
+    Content:
+    <br>
+    <textarea cols="50" rows="20" th:field="*{content}"></textarea>
+    <br>
+    <br>
+</form>
+</body>
+</html>

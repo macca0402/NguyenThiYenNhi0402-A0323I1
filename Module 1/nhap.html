@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+
+</head>
+<body>
+
+</body>
+<script>
+    let tuoiCha;
+    let tuoiCon;
+    do {
+        tuoiCha = +prompt("Nhap vao tuoi cha: ");
+        tuoiCon = +prompt("Nhap tuoi con: ");
+    } while (tuoiCha - tuoiCon < 25);
+    let i = 0;
+    let a = tuoiCha;
+    let b = tuoiCon;
+    while (true) {
+        tuoiCha = tuoiCha + i;
+        tuoiCon = tuoiCon + i;
+        if (tuoiCha != 2 * tuoiCon) {
+            tuoiCha = a;
+            tuoiCon = b;
+            i++;
+        } else {
+            alert("Sau " + i + "nam thi cha=2con.");
+        }
+    }
+
+</script>
+</html>

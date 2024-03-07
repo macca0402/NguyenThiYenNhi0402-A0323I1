@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var chuoi = "Nguyen Thi Yen Nhi";
+    var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var lower = 'abcdefghijklmnopqrstuvwxyz';
+    var result = [];
+    for (let i = 0; i < chuoi.length; i++) {
+        if (upper.indexOf(chuoi[i]) !== -1) {
+            result.push(chuoi[i].toLowerCase());
+        } else if (lower.indexOf(chuoi[i]) !== -1) {
+            result.push(chuoi[i].toUpperCase());
+        } else {
+            result.push(chuoi[i]);
+        }
+    }
+    console.log(result.join(''));
+</script>
+
+</body>
+</html>

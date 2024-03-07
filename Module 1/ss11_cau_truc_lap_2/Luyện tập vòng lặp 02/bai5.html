@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soTienVay = +prompt("Nhap so tien ban dau:");
+    let soThangChoVay = +prompt("Nhap so thang cho vay:");
+    let laiXuatHangThang = +prompt("Nhap lai xuat hang thang:");
+
+    for (let i = 1; i <= soThangChoVay; i++) {
+        soTienVay = soTienVay + soTienVay * laiXuatHangThang;
+    }
+    alert("So tien vay phai tra: " + soTienVay.toFixed(2));
+
+
+</script>
+
+</body>
+</html>

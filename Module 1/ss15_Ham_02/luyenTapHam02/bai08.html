@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let array = [1, 21, 23, 44, 34, 654, 6, 5];
+    array=array.toString().split('');
+    function displayArray() {
+        for (let i = 0; i < array.length; i++) {
+            document.write(array[i]);
+        }
+    }
+
+    function daoMang() {
+        let i = 0;
+        let j = array.length - 1;
+        while (i < j) {
+            let tam = array[i];
+            array[i] = array[j];
+            array[j] = tam;
+            i++;
+            j--;
+        }
+    }
+
+    displayArray();
+    daoMang();
+    document.writeln("<br>");
+    displayArray();
+
+</script>
+</body>
+</html>

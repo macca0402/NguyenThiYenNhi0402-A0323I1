@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            top: 100%;
+            bottom: 100%;
+        }
+
+        button {
+            width: 400px;
+            height: 200px;
+            border-radius: 40px;
+            align-content: center;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<center>
+    <form action="#" method="get">
+        <table>
+            <tr>
+                <td>
+                    <button id="play" onclick="playGame()">CHƠI</button>
+                </td>
+                <td>
+                    <button id="replay">CHƠI LẠI</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+</center>
+<script>
+
+    function taoSoRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function playGame() {
+
+        for (let i = 1; i <= 3; i++) {
+            alert("Lan choi thu :" + i);
+            var valueFirst = +prompt("Nhập vào khoảng số ,bắt đầu từ : ");
+            var valueEnd = +prompt("Nhập vào khoảng số ,kết thúc từ : ");
+            let valueGuess = +prompt("Nhap gia tri bạn muốn đoán : ");
+            if (valueGuess == taoSoRandom(valueFirst, valueEnd)) {
+                alert("CHÚC MỪNG NHA , ĐÚNG RỒI ")
+            } else {
+                alert("THUA RỒI");
+            }
+        }
+    }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    let max = numerators[0] / denominators[0];
+    let x, a, b, c;
+
+    function maxFraction() {
+        for (let i = 0; i < numerators.length; i++) {
+            x = numerators[i] / denominators[i];
+            if (x > max) {
+                max = x;
+                a = numerators[i];
+                b = denominators[i];
+                c = i;
+            }
+        }
+        return a + "/" + b + " có chỉ số là : " + c;
+    }
+
+
+    alert(maxFraction())
+
+</script>
+
+</body>
+</html>

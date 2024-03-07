@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhap n: ");
+    let count = 0;
+    let a1 = 0;
+    let a2 = 1;
+    let i = 0;
+    let mangFiB = new Array();
+
+    function pushMang(mang, a) {
+        mang.push(a);
+    }
+
+    document.writeln(a1 + "<br>");
+    pushMang(mangFiB, a1);
+    debugger
+    while (i < n) {
+        count = a1 + a2;//count=0+1=1 2
+        a1 = a2; //a1=1 1 2 3
+        a2 = count;//a2=1 2
+        i++;
+        document.writeln(a1 + "<br>");
+        pushMang(mangFiB, a1);
+    }
+    document.writeln(mangFiB);
+    let mang = [1, 5, 6, 13, 9, 12, 8, 0, 5, 1];//10
+    let mangKetQua = new Array();
+    for (let i = 0; i < mang.length; i++) {
+        for (let j = 0; j < mangFiB.length; j++) {
+            if (mang[i] == mangFiB[j]) {
+                mangKetQua.push(mang[i]);
+                break;
+            }
+        }
+    }
+    document.writeln("<br>");
+    document.writeln(mangKetQua);
+    for (let i = 0; i < mangKetQua.length - 1; i++) {
+        for (let j = i + 1; j < mangKetQua.length; j++) {
+            if (mangKetQua[i] > mangKetQua[j]) {
+                let tmp = mangKetQua[i];
+                mangKetQua[i] = mangKetQua[j];
+                mangKetQua[j] = tmp;
+            }
+        }
+    }
+    document.writeln("<br>");
+    document.writeln(mangKetQua);
+
+
+</script>
+
+</body>
+</html>

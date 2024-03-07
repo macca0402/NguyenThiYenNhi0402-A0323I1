@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let listFruit = ['Cafe - 10 000', 'Cam vắt - 20 000', 'Nước ép cà rốt - 15 000', 'Nước ép cà chua - 12 000', 'Nước lọc - 5 000', 'Nước dừa - 10 000', 'Thoat goi mon'];
+    let priceFruit = [10000, 20000, 15000, 12000, 5000, 10000, null];
+
+    let count = 0;
+    let chon;
+    do {
+        alert("Menu : \n " +
+            listFruit);
+        chon = +prompt("Moi ban chon : ");
+        let soLuong = +prompt("Moi ban chon so luong: ");
+        for (let i = 0; i < listFruit.length; i++) {
+            if (chon == listFruit.indexOf(listFruit[i])) {
+                count += soLuong * priceFruit[chon];
+            }
+        }
+        alert("Tong don: " + count);
+    } while (chon != 6)
+    alert("Tong so tien la: " + count)
+
+
+</script>
+
+</body>
+</html>

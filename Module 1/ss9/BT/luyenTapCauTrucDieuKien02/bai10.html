@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soTieuThu = +prompt("Nhap vao so tieu thu dien: ");
+    let soTienDien;
+    if (soTieuThu <= 50) {
+        soTienDien = soTieuThu * 1.678;
+        alert("So tien dien phai dong : " + soTienDien + " nghin dong");
+    } else if (soTieuThu <= 100) {
+        soTienDien = (soTieuThu - 50) * 1.678 + (soTieuThu - 50) * 1.734;
+        alert("So tien dien phai dong : " + soTienDien + " nghin dong");
+    } else if (soTieuThu <= 200) {
+        soTienDien = (soTieuThu - 50) * 1.678 + (soTieuThu - 50) * 1.734 + (soTieuThu - 100) * 2.014;
+        alert("So tien dien phai dong : " + soTienDien + " nghin dong");
+    } else if (soTieuThu <= 300) {
+        soTienDien = (soTieuThu - 50) * 1.678 + (soTieuThu - 50) * 1.734 + (soTieuThu - 100) * 2.014 + (soTieuThu - 100) * 2.536;
+        alert("So tien dien phai dong : " + soTienDien + " nghin dong");
+    } else {
+        soTienDien = (soTieuThu - 50) * 1.678 + (soTieuThu - 50) * 1.734 + (soTieuThu - 100) * 2.014 + (soTieuThu - 100) * 2.536 + (soTieuThu - 400) * 2.927;
+        alert("So tien dien phai dong : " + soTienDien + " nghin dong");
+    }
+</script>
+
+</body>
+</html>

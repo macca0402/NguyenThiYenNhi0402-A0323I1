@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button onclick="showHello()">Click me</button>
+<body>
+<script>
+
+    // định nghĩa , khai báo hàm không tham số
+    function showHello() {
+        console.log("Hello world");
+    }
+
+    // sử dùng hàm thì cần gọi hàm
+    showHello();
+    showHello();
+    showHello();
+
+    // biến toàn cục
+    let name = "chánh";
+
+    // định nghĩa hàm có tham số
+    function showMessage(text) {
+        let string = "Viêt Nam"; // biến cụ bộ
+        console.log(name + text + string);
+    }
+
+    let string = "Hello C03";
+    showMessage(string);
+    showMessage("Hello world");
+    showMessage("Hello Việt Nam");
+    showMessage("Xin chào");
+
+    function sum(n1, n2) {
+        let s = n1 + n2;
+        alert("tổng của 2 số là : " + s);
+    }
+
+    function sum2(n1, n2) {
+        let s = n1 + n2;
+        return s;
+    }
+
+    // tính tổng của 2 số a và b
+    let a = 10;
+    let b = 20;
+
+    // sum(a,b);
+    // let tong = sum2(a,b);
+    // alert(tong)
+
+    // tính tổng của 4 số a,b,c,d;
+    let c = 30;
+    let d = 40;
+    // sử dụng hàm trên
+    //? sum().............. không dùng đơcj
+    // ? sum2()..........
+    // let s = sum2(sum2(a,b),sum2(c,d));
+    // let s = sum(sum(a,b),sum(c,d));
+    // alert(s);
+
+    // kiểm tra 1 số có phải là số nguyên tố hay không
+    function isPrime(n) {
+
+        if (n < 2) {
+            return false
+        } else {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    return false
+                }
+            }
+            return true;
+        }
+    }
+
+    if (isPrime(10)){
+        alert("là ố nguyên tố")
+    }else {
+        alert("không phải là số nguyên tố")
+    }
+    // in ra các số nguyên tố có trong mảng 1 chiều
+    let arr = [1,5,4,7,9,20,11];
+    for (let i = 0; i <arr.length ; i++) {
+        if (isPrime(arr[i])==true){
+            document.write(arr[i]);
+        }
+    }
+
+</script>
+</body>
+</html>

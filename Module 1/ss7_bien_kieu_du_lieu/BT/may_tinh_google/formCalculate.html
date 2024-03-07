@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button, label {
+            width: 300px;
+            height: 120px;
+            font-size: 40px;
+        }
+
+        input {
+            width: 300px;
+            height: 90px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <h1>Calculator</h1>
+    <tr>
+        <td colspan="2">
+            <input type="text" id="number1" placeholder="Enter first number ">
+        </td>
+        <td colspan="2">
+            <input type="text" id="number2" placeholder="Enter second number ">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="action1()">Addition(+)</button>
+        </td>
+        <td>
+            <button type="button" onclick="action2()">Subtraction(-)</button>
+        </td>
+        <td>
+            <button type="button" onclick="action3()">Multiplication(*)</button>
+        </td>
+        <td>
+            <button type="button" onclick="action4()">Division(/)</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <label>Result Division : </label><span id="result" style="font-size: 40px"></span>
+        </td>
+
+    </tr>
+</table>
+<script>
+
+    let ketQua1, ketQua2, ketQua3, ketQua4;
+
+    function action1() {
+        let num1 = +document.getElementById("number1").value;
+        let num2 = +document.getElementById("number2").value;
+        ketQua1 = num1 + num2;
+        document.getElementById("result").innerHTML = ketQua1;
+    }
+
+    function action2() {
+        let num1 = +document.getElementById("number1").value;
+        let num2 = +document.getElementById("number2").value;
+        ketQua2 = num1 - num2;
+        document.getElementById("result").innerText = ketQua2;
+        console.log(ketQua2);
+    }
+
+    function action3() {
+        let num1 = +document.getElementById("number1").value;
+        let num2 = +document.getElementById("number2").value;
+        ketQua3 = num1 * num2;
+        document.getElementById("result").innerText = ketQua3;
+    }
+
+    function action4() {
+        let num1 = +document.getElementById("number1").value;
+        let num2 = +document.getElementById("number2").value;
+        if (num2 == 0) {
+            alert("Gia tri 2 khac khong!!!")
+        } else {
+            ketQua4 = num1 / num2;
+            document.getElementById("result").innerText = ketQua4;
+        }
+
+    }
+
+</script>
+</body>
+
+</html>

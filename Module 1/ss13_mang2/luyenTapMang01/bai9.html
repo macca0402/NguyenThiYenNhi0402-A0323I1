@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử,
+gọi là mảng a và b.
+Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+ Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+ Hiển thị mảng c.
+-->
+<body>
+<script>
+    let mangA = new Array(10);
+    let mangB = new Array(10);
+
+    for (let i = 0; i < mangA.length; i++) {
+        mangA[i] = +prompt("Mang A_ Nhap gia tri " + i + " : ");
+    }
+    for (let i = 0; i < mangB.length; i++) {
+        mangB[i] = +prompt("Mang B_ Nhap gia tri " + i + " : ");
+    }
+    let mangC = mangA.concat(mangB);
+    for (let i = 0; i < mangC.length; i++) {
+        document.writeln(mangC[i] + "<br>");
+    }
+</script>
+
+</body>
+</html>

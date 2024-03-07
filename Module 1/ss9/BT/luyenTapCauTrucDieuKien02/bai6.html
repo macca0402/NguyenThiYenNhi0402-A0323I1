@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giải phương trình bậc 1</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhap gia tri a: ");
+    let b = +prompt("Nhap gia tri b: ");
+    if (a == 0 && b == 0) {
+        alert("Phuong trinh vo so nghiem.")
+    } else if (a != 0) {
+        let x = -b / a;
+        alert("Phuong trinh co nghiem duy nhat : x = " + x)
+    } else if (a == 0 && b != 0) {
+        alert("Phuong trinh vo nghiem!")
+    }
+</script>
+
+</body>
+</html>

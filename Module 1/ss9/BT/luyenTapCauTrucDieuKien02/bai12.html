@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+<script>
+    let soTienVay = +prompt("Nhap so tien cho vay: ");
+    let soThangVay = +prompt("Nhap so thang cho vay: ");
+    let soLaiXuat = +prompt("Nhap so lai xuat hang thang cho vay: ");
+    for (i = 0; i < soThangVay; i++) {
+        soTienVay = soTienVay + soTienVay * soLaiXuat;
+    }
+    alert("So tien khi tra (lai me de lai con ):" + soTienVay);
+
+</script>
+
+</body>
+</html>

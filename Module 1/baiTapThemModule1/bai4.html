@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="add()">Thêm</button>
+<p id="result"></p>
+<script>
+    class MayTinh {
+        constructor(maMay, tenMay, tenHang, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.tenHang = tenHang;
+            this.giaBan = giaBan;
+        }
+
+        getMa() {
+            return this.maMay;
+        }
+
+        getTenMay() {
+            return this.tenMay;
+        }
+
+        getTenHang() {
+            return this.tenHang;
+        }
+
+        getGiaBan() {
+            return this.giaBan;
+        }
+
+        setMa(maMay) {
+            this.maMay = maMay;
+        }
+
+        setTenMay(tenMay) {
+            this.tenMay = tenMay;
+        }
+
+        setTenHang(tenHang) {
+            this.tenHang = tenHang;
+        }
+
+        setGiaBan(giaBan) {
+            this.giaBan = giaBan;
+        }
+
+        toString() {
+            return this.maMay + " " + this.tenMay + " " + this.tenHang + " " + this.giaBan;
+        }
+    }
+
+    let listMayTinh = [];
+    let may1 = new MayTinh(1, "Cherry", "Sam Sung", 10000);
+    let may2 = new MayTinh(2, "Cherry", "Sam Sung", 10600);
+    let may3 = new MayTinh(3, "Cherry", "Sam Sung", 1004500);
+    let may4 = new MayTinh(4, "Cherry", "Sam Sung", 1000000);
+    listMayTinh.push(may1, may2, may3, may4);
+    display(listMayTinh);
+
+    function xoa(index) {
+        listMayTinh.splice(index, 1);
+        display(listMayTinh);
+    }
+
+    function sua(index) {
+        let newMaMay = prompt("Nhap ma may: ");
+        let newTenMay = prompt("Nhap ten may: ");
+        let newTenHang = prompt("Nhap ten hang: ");
+        let newGiaBan = prompt("Nhap gia: ");
+        listMayTinh[index].setMa(newMaMay);
+        listMayTinh[index].setTenMay(newTenMay);
+        listMayTinh[index].setTenHang(newTenHang);
+        listMayTinh[index].setGiaBan(newGiaBan);
+        display(listMayTinh);
+    }
+
+    function add() {
+        let newMaMay = prompt("Nhap ma may: ");
+        let newTenMay = prompt("Nhap ten may: ");
+        let newTenHang = prompt("Nhap ten hang: ");
+        let newGiaBan = prompt("Nhap gia: ");
+        let newMay = new MayTinh(newMaMay, newTenMay, newTenHang, newGiaBan);
+        listMayTinh.push(newMay);
+        display(listMayTinh);
+    }
+
+    function display(list) {
+        let tableString = '<table border="2">\n' +
+            '    <tr>\n' +
+            '        <th>Mã máy</th>\n' +
+            '        <th>Tên máy</th>\n' +
+            '        <th>Tên Hãng</th>\n' +
+            '        <th>Giá Bán</th>\n' +
+
+            '        <th>Sửa</th>\n' +
+            '        <th>Xóa</th>\n' +
+            '    </tr>'
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + list[i].getMa() + '</td>\n' +
+                '        <td>' + list[i].getTenMay() + '</td>\n' +
+                '        <td>' + list[i].getTenHang() + '</td>\n' +
+                '        <td>' + list[i].getGiaBan() + '</td>\n' +
+                '        <td><button onclick="sua(' + i + ')">Sửa</button></td>\n' +
+                '        <td><button onclick="xoa(' + i + ')">Xóa</button></td>\n' +
+                '    </tr>'
+        }
+        tableString += '<table>\n';
+        document.getElementById("result").innerHTML = tableString;
+    }
+
+
+</script>
+</body>
+</html>

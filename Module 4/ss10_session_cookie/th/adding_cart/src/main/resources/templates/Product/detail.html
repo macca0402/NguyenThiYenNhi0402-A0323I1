@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .card {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 50%;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .product-details {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-details h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .product-details p {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        img {
+            width: 500px;
+            height: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>Product Details</h1>
+    <div th:insert="menu">
+    </div>
+</header>
+
+<div class="container" th:object="${product}">
+    <div class="card">
+        <div class="image">
+            <img th:src="*{image}" alt="Product Image">
+        </div>
+        <div class="details">
+            <h1 th:text="*{name}">Product Name</h1>
+            <p class="price" th:text="*{'Giá bán :'+price}">$99.99</p>
+            <p class="description" th:text="*{'Mô tả: '+ description}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum rhoncus odio vitae metus ultrices, sit amet
+                molestie dui pharetra. Sed fermentum urna ac diam rhoncus,
+                et iaculis tortor aliquam. Integer auctor purus ac dolor
+                ultricies ullamcorper.
+            </p>
+            <a th:href="@{/product/add-to-cart/{id}(id=${product.id})}">
+                <button type="submit">Add to Cart</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

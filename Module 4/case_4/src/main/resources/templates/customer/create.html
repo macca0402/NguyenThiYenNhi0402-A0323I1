@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form th:action="@{/customer/doCreate}" method="post" th:object="${customer}">
+        <table border="1">
+            <tr>
+                <th>Loại khách</th>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Số CMND</th>
+                <th>Số điện thoại</th>
+                <th>Email</th>
+                <th>Địa chỉ</th>
+            </tr>
+            <tr>
+                <td>
+                    <select th:field="*{category.ma_loai_khach}">
+                        <option th:each="c:${categories}" th:value="${c.ma_loai_khach}" th:text="${c.ten_loai_khach}">
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" th:field="*{ho_ten}">
+                </td>
+                <td>
+                    <input type="date" th:field="*{ngay_sinh}">
+                </td>
+
+                <td>
+                    <select th:field="*{gioi_tinh}">
+                        <option th:value="1" th:text="Nữ"></option>
+                        <option th:value="0" th:text="Nam"></option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" th:field="*{so_cmnd}">
+                </td>
+                <td>
+                    <input type="text" th:field="*{so_dien_thoai}">
+                </td>
+                <td><input type="text" th:field="*{email}"></td>
+                <td><input type="text" th:field="*{dia_chi}"></td>
+            </tr>
+            <tr>
+                <th colspan="9">
+                    <button type="submit">Create</button>
+                </th>
+
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

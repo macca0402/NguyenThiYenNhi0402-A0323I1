@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="add()">Them moi</button>
+<p id="result"></p>
+<script>
+    class DienThoai {
+        constructor(maDienThoai, ten, hangSanXuat, gia) {
+            this.maDienThoai = maDienThoai;
+            this.ten = ten;
+            this.hangSanXuat = hangSanXuat;
+            this.gia = gia;
+        }
+
+        getMa() {
+            return this.maDienThoai;
+        }
+
+        setMa(maDienThoai) {
+            this.maDienThoai = maDienThoai;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        getHang() {
+            return this.hangSanXuat;
+        }
+
+        setHang(hangSanXuat) {
+            this.hangSanXuat = hangSanXuat;
+        }
+
+        getGia() {
+            return this.gia;
+        }
+
+        setGia(gia) {
+            this.gia = gia;
+        }
+
+        toString() {
+            return "Mã điện thoại: " + this.maDienThoai + "Tên : " + this.ten + "Hang san xuat: " + this.hangSanXuat + "Gia: " + this.gia;
+        }
+
+
+    }
+
+    let listDienThoai = [];
+    let dienThoai1 = new DienThoai(1, "Sam Sung", "Han Quoc", 10000);
+    let dienThoai2 = new DienThoai(5, "Sam Sung", "Han Quoc", 20000);
+    let dienThoai3 = new DienThoai(3, "Sam Sung", "Han Quoc", 19900);
+    listDienThoai.push(dienThoai1, dienThoai2, dienThoai3);
+
+    function add() {
+        let newMa = prompt("Nhap ma dien thoai: ");
+        let newTen = prompt("Nhap ten dien thoai: ");
+        let newHangSanXuat = prompt("Nhap hang san xuat : ");
+        let newGia = prompt("Nhap gia: ");
+        let newDienThoai = new DienThoai();
+        newDienThoai.setMa(newMa);
+        newDienThoai.setTen(newTen);
+        newDienThoai.setHang(newHangSanXuat);
+        newDienThoai.setGia(newGia);
+        listDienThoai.push(newDienThoai);
+        display(listDienThoai);
+    }
+
+    function display(list) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>Mã điện thoại</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>Hãng sản xuất</th>\n' +
+            '        <th>Giá</th>\n' +
+            '    </tr>'
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '       <th>' + list[i].getMa() + '</th>\n' +
+                '       <td>' + list[i].getTen() + '</td>\n' +
+                '       <td>' + list[i].getHang() + '</td>\n' +
+                '       <td>' + list[i].getGia() + '</td>\n' +
+                '    </tr>'
+        }
+        tableString += '<table>\n';
+        document.getElementById('result').innerHTML = tableString;
+    }
+
+    display(listDienThoai);
+</script>
+
+</body>
+</html>

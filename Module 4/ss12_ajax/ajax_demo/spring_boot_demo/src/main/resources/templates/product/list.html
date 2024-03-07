@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List product</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>List product</h1>
+    <form th:action="@{/product/search}" method="get">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="product_name" />
+        <br/>
+        <input type="submit" value="Search" />
+    </form>
+    <h2>Search ajax</h2>
+    Name: <input type="text" id="nameProduct" onkeypress="search();"/> <br/>
+    <div th:text="${#locale.setDefault('vn')}"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>DateRelease</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+            <tr th:each="p: ${products}" th:object="${p}">
+                <td th:text="*{id}"></td>
+                <td th:text="*{name}"></td>
+                <td th:text="*{category.categoryName}"></td>
+                <td th:text="*{#numbers.formatCurrency(price)}"></td>
+                <td th:text="*{#dates.format(dateRelease, 'dd/MM/yyyy')}"></td>
+                <td th:text="*{quantity}"></td>
+                <td>
+                    <a th:href="@{/product/detail/{id}(id=*{id})}">Detail</a>
+                    <a th:href="@{/product/update(id=*{id})}">Update</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+       function search() {
+            let name = $("#nameProduct").val();
+            $.ajax({
+                url: "http://localhost/api/v1/product/search",
+                data: {
+                    product_name: name
+                },
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    let result = "";
+                    for (let i = 0; i < data.length; i++) {
+                        result += "<tr>" +
+                            "<td>" + data[i].id + "</td>" +
+                            "<td>" + data[i].name + "</td>" +
+                            "<td>" + data[i].category.categoryName + "</td>" +
+                            "<td>" + data[i].price + "</td>" +
+                            "<td>" + data[i].dateRelease + "</td>" +
+                            "<td>" + data[i].quantity + "</td>" +
+                        '<td><a href="http://localhost/product/detail/' +  data[i].id + '">Detail</a>' +
+                            '<a href="http://localhost/product/update?id='+ data[i].id +'">Update</a></td></tr>';
+                    }
+                    $("#result").html(result);
+                }
+
+            });
+       }
+    </script>
+</body>
+</html>

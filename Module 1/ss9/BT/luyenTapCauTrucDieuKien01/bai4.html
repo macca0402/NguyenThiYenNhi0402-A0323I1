@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhap a: ");
+    let b = +prompt("Nhap b: ");
+    let c = +prompt("Nhap c: ");
+    let max = a;
+    if (b > a) {
+        max = b;
+        if (c > b) {
+            max = c;
+        }
+    } else if (c > a) {
+        max = c;
+        if (b > c) {
+            max = b;
+        }
+    }
+    alert("Gia tri MAX: " + max);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Record Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            color: #495057;
+            font-family: 'Roboto', sans-serif;
+            background: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+        }
+
+        .card-header {
+            background-color: pink;
+            color: #fff;
+            border-bottom: none;
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .row dl dt {
+            color: pink;
+        }
+
+        .row dl dd {
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Chi tiết dự án</h5>
+        </div>
+        <div class="card-body">
+            <div class="row" th:object="${tinTuc}">
+                <dl class="col-md-6">
+                    <dt>Tiêu đề :</dt>
+                    <dd th:text="*{tieuDe}">Thomas Hardy</dd>
+
+                    <dt>Danh mục :</dt>
+                    <dd th:text="*{danhMuc.tenDoanhMuc}">89 Chiaroscuro Rd.</dd>
+
+                    <dt>Nội dung:</dt>
+                    <dd th:text="*{noiDung}">Portland</dd>
+                </dl>
+
+                <dl class="col-md-6">
+                    <dt>Ngày đăng tin:</dt>
+                    <dd th:text="*{ngayDang}">97219</dd>
+
+                    <dt>Phóng viên :</dt>
+                    <dd th:text="*{phongVien}">USA</dd>
+                </dl>
+
+
+            </div>
+        </div>
+        <a th:href="@{/list}" class="btn btn-primary back-btn">Back to Records</a>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

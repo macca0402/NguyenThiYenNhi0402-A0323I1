@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Phòng trả sách</h1>
+<div th:insert="~{home/header::header_user}"></div>
+<br>
+
+<br>
+<form th:action="@{/user/return_book/do_return_book}" method="get">
+    <input  name="codeBorrow" placeholder="Enter code borrow :" type="text">
+    <input type="submit" value="Find code borrow" >
+</form>
+<p th:text="${message}"></p>
+
+</body>
+</html>

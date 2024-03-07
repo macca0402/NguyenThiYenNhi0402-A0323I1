@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b>Temperature Converter</b>
+<p> Type a value itn the Fahrenheit field to convert the value to Celcius: </p><br>
+<label> Fahrenheit</label>
+<select value="1" style="width: 100px" id="doF" onclick="changed()">
+    <option>1</option>
+    <option>10</option>
+    <option>20</option>
+    <option>30</option>
+    <option>40</option>
+    <option>50</option>
+    <option>60</option>
+    <option>70</option>
+    <option>80</option>
+    <option>90</option>
+    <option>200</option>
+    <option>900</option>
+</select>
+<br>
+<label> Celcius:<span id='result'></span></label>
+</body>
+<script>
+    function changed() {
+        let doF = document.getElementById('doF').value;
+        document.getElementById("result").innerHTML = (doF - 32) / 1.8;
+    }
+
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="menu">
+  <a th:href="@{/view/list}">
+    <button>
+      Menu blog
+    </button>
+  </a>
+  <a th:href="@{/view/create}">
+    <button>
+      Create
+    </button>
+  </a>
+  <a th:href="@{/view/sort}">
+    <button>
+      Sorting date
+    </button>
+  </a>
+  <a th:href="@{/view/list_paging}">
+    <button>
+      Paging
+    </button>
+  </a>
+  <a th:href="@{/view/create-category}">
+    <button>
+      Add category
+    </button>
+  </a>
+  <a th:href="@{/view/category/list}">
+    <button>
+     Menu category
+    </button>
+  </a>
+  <br>
+  <br>
+  <br>
+  <form th:action="@{/view/title}" method="get">
+    <input type="text" name="title" placeholder="Find By Title">
+    <input type="submit" value="Search" >
+  </form>
+  <br>
+</div>
+
+</body>
+</html>

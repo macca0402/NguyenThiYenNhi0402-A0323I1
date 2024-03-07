@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<p id="result"></p>
+<p id="result2"></p>
+<script>
+    function changeButton1() {
+        if (document.getElementById("status1").value == 'bat') {
+            alert("Điện thoại đã tắt ");
+            document.getElementById("status1").style.backgroundColor = "#ef0535";
+            document.getElementById("status1").value = "tat";
+        } else if (document.getElementById("status1").value == 'tat') {
+            alert("Điện thoại đã bật ");
+            document.getElementById("status1").style.backgroundColor = "#38ef05";
+            document.getElementById("status1").value = "bat";
+        }
+    }
+
+    function changeButton2() {
+        if (document.getElementById("status2").value == 'bat') {
+            alert("Điện thoại đã tắt ");
+            document.getElementById("status2").style.backgroundColor = "#ef0535";
+            document.getElementById("status2").value = "tat";
+        } else if (document.getElementById("status2").value == 'tat') {
+            alert("Điện thoại đã bật ");
+            document.getElementById("status2").style.backgroundColor = "#38ef05";
+            document.getElementById("status2").value = "bat";
+        }
+    }
+
+    function display() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th colspan="3" >Nokia</th>\n' +
+            '        <th colspan="1" ><button id="status1" value="bat" onclick="changeButton1()">Bật</button></th>\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <td colspan="4">\n' +
+            '            <input type="text" placeholder="Nhap van ban" id="text1">\n' +
+            '        </td>\n' +
+            '\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <td colspan="4">\n' +
+            '            <p id="show1"></p>\n' +
+            '        </td>\n' +
+            '\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <th colspan="2">\n' +
+            '            <button onclick="guiNokia()">Gửi</button>\n' +
+            '        </th>\n' +
+            '        <th >\n' +
+            '            <button onclick="hopThuDen1()">Hộp thư đến</button>\n' +
+            '        </th>\n' +
+            '        <th >\n' +
+            '            <button onclick="xemThu1()">Xem thư</button>\n' +
+            '        </th>\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <th colspan="4">\n' +
+            '            <p id="pin1"></p>\n' +
+            '        </th>\n' +
+            '    </tr>\n' +
+            '</table>';
+
+        document.getElementById('result').innerHTML = tableString;
+    }
+
+    display();
+
+    function display2() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th colspan="3">Iphone</th>\n' +
+            '        <th colspan="1" ><button id="status2" value="bat" onclick="changeButton2()">Bật</button></th>\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <td colspan="4">\n' +
+            '            <input type="text" placeholder="Nhap van ban" id="text2">\n' +
+            '        </td>\n' +
+            '\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <td colspan="4">\n' +
+            '            <p id="show2"></p>\n' +
+            '        </td>\n' +
+            '\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <th colspan="2">\n' +
+            '            <button onclick="guiIphone()">Gửi</button>\n' +
+            '        </th>\n' +
+            '        <th >\n' +
+            '            <button onclick="hopThuDen2()">Hộp thư đến</button>\n' +
+            '        </th>\n' +
+            '        <th >\n' +
+            '            <button onclick="xemThu2()">Xem thư</button>\n' +
+            '        </th>\n' +
+            '    </tr>\n' +
+            '    <tr>\n' +
+            '        <th colspan="4">\n' +
+            '            <p id="pin2"></p>\n' +
+            '        </th>\n' +
+            '    </tr>\n' +
+            '</table>';
+        document.getElementById('result2').innerHTML = tableString;
+    }
+
+    display2();
+
+    class Mobile {
+        constructor(pin, soanTinNhan, hopThuDen) {
+            if (this.pin > 100 && this.pin < 0) {
+                alert("Phan tram pin khong hop le.")
+            } else {
+                this.pin = pin;
+            }
+            this.pin = 100;
+            this.soanTinNhan = soanTinNhan;
+            this.hopThuDen = hopThuDen;
+        }
+
+        getPin() {
+            return this.pin;
+        }
+
+        setPin() {
+            this.pin = pin;
+        }
+
+        rechargingPin() {
+            this.pin = 100;
+            this.getPin();
+        }
+
+        consumePower() {
+
+            let a;
+
+            if (this.pin == 0) {
+                alert("Điện thoại hết pin. Vui lòng cắm sạc ");
+                a = confirm("Bạn có  muốn cắm sạc khong?");
+                if (a == true) {
+                    alert("Đã sạc xong ")
+                    this.rechargingPin();
+                }
+            } else if (this.pin > 0 && this.pin <= 100) {
+                this.pin = this.pin - 10;
+                return this.pin + " %";
+            }
+        }
+
+        statusMobile(status) {
+            if (status == "on") {
+                return "on";
+            } else if (status == "off") {
+                return "off";
+            }
+        }
+
+        getTinNhan() {
+            return this.soanTinNhan;
+        }
+
+        setTinNhan() {
+        }
+
+        getHopThu() {
+            return this.hopThuDen;
+        }
+
+        setHopThu() {
+            this.hopThuDen = hopThuDen;
+        }
+
+        demThu(mobile1) {
+            return mobile1.memory.length;
+        }
+
+        luuTruHopThu(message) {
+            this.memory.push(message);
+        }
+
+        boNho() {
+            return this.memory;
+        }
+    }
+
+    class Nokia extends Mobile {
+        constructor(pin, soanTinNhan, hopThuDen, memory) {
+            super(pin, soanTinNhan, hopThuDen, memory);
+            this.memory = [];
+        }
+
+
+        statusMobile(status) {
+            status = document.getElementById("status1").value;
+            if (status == "bat") {
+                return "on";
+            } else if (status == "tat") {
+                return "off";
+            }
+        }
+
+        setTinNhan() {
+            return document.getElementById("text1").value;
+        }
+
+        xemThu(mobile1) {
+            let string = '';
+            // console.log(mobile1.memory)
+            for (let i = 0; i < mobile1.memory.length; i++) {
+                string += "Thư  " + (i) + " :" + mobile1.memory[i] + "\n";
+            }
+            document.getElementById("show1").innerText = string;
+        }
+
+    }
+
+    class Iphone extends Mobile {
+        constructor(pin, soanTinNhan, hopThuDen, memory) {
+            super(pin, soanTinNhan, hopThuDen, memory);
+            this.memory = [];
+        }
+
+        statusMobile(status) {
+            status = document.getElementById("status2").value;
+            if (status == "bat") {
+                return "on";
+            } else if (status == "tat") {
+                return "off";
+            }
+        }
+
+        setTinNhan() {
+            return document.getElementById("text2").value;
+        }
+
+        xemThu(mobile1) {
+            let string = '';
+            // console.log(mobile1.memory)
+            for (let i = 0; i < mobile1.memory.length; i++) {
+                string += "Thư  " + (i) + " :" + mobile1.memory[i] + "\n";
+            }
+            document.getElementById("show2").innerText = string;
+        }
+
+    }
+
+    let iphone = new Iphone();
+    let nokia = new Nokia();
+
+    function guiNokia() {
+        if (nokia.statusMobile() == 'on') {
+            nokia.luuTruHopThu(nokia.setTinNhan());
+            document.getElementById("text1").value = "";
+            document.getElementById('pin1').innerText = nokia.consumePower();
+        } else {
+            alert("Điện thoại đã tắt , không thực hiện được nha ");
+        }
+
+    }
+
+    function guiIphone() {
+        if (iphone.statusMobile() == 'on') {
+            iphone.luuTruHopThu(iphone.setTinNhan());
+            document.getElementById("text2").value = "";
+            document.getElementById('pin2').innerText = iphone.consumePower();
+        } else {
+            alert("Điện thoại đã tắt , không thực hiện được nha ");
+        }
+    }
+
+    function hopThuDen2() {
+        if (iphone.statusMobile() == 'on') {
+            document.getElementById("show2").innerHTML = "Ban co " + iphone.demThu(nokia) + " thu moi.";
+            document.getElementById('pin2').innerText = iphone.consumePower();
+        } else {
+            alert("Điện thoại đã tắt , không thực hiện được nha ");
+        }
+
+    }
+
+    function hopThuDen1() {
+        if (nokia.statusMobile() == 'on') {
+            document.getElementById("show1").innerHTML = "Ban co " + nokia.demThu(iphone) + " thu moi.";
+            document.getElementById('pin1').innerText = nokia.consumePower();
+        } else {
+            alert("Điện thoại đã tắt , không thực hiện được nha ");
+        }
+
+    }
+
+    function xemThu1() {
+        if (nokia.statusMobile() == 'on') {
+            nokia.xemThu(iphone);
+            document.getElementById('pin1').innerText = nokia.consumePower();
+        } else {
+            alert("Điện thoại đã tắt , không thực hiện được nha ");
+        }
+    }
+
+    function xemThu2() {
+        if (iphone.statusMobile() == 'on') {
+            iphone.xemThu(nokia);
+            document.getElementById('pin2').innerText = iphone.consumePower();
+        } else {
+            alert("Điện thoại đã tắt , không thực hiện được nha ");
+        }
+    }
+</script>
+
+</body>
+</html>

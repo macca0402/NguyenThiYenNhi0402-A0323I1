@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let student = {
+        name : "Nhi",
+        age: 20,
+        address: "Đà Nẵng",
+        study (subject){
+            console.log("sinh viên "+ this.name + " đang học môn : "+ subject);
+        }
+    }
+    let student2 = {
+        name : "Hà",
+        age: 20,
+        address: "Đà Nẵng",
+        study (subject){
+            console.log("sinh viên "+ this.name + " đang học môn : "+ subject);
+        }
+    }
+    console.log("sinh viên có tên " + student.name);
+    student.study("JS")
+
+    function StudentFunction(name, age, address) {
+        this.name = name;
+        this.age =age;
+        this.address = address;
+        this.study = function (subject) {
+            console.log("sinh viên "+ this.name + " đang học môn : "+ subject);
+        };
+    }
+
+    // cách sử dụng function để tạo đối tượng
+    let sinhVien1 = new StudentFunction("chánh1", 38,"Kon tum")
+    let sinhVien2 = new StudentFunction("chánh2", 38,"Kon tum")
+    let sinhVien3 = new StudentFunction("chánh3", 38,"Kon tum")
+
+    console.log("sinh viên có tên " + sinhVien1.name);
+    sinhVien1.name = "chanh100"
+    console.log("sinh viên có tên " + sinhVien1.name);
+    sinhVien1.study("JS")
+
+    class SinhVien{
+        constructor(ten, tuoi, diaChi) {
+            this.ten = ten;
+            this.tuoi= tuoi;
+            this.diaChi=diaChi;
+        }
+        getTen(){
+            return this .ten;
+        }
+        setTen(ten){
+            this.ten = ten;
+        }
+        hoc(monHoc){
+            console.log("sinh viên "+ this.ten + " đang học môn : "+ monHoc);
+        }
+    }
+    // sử dụng class tạo đối tượng
+    let sv1 = new SinhVien("hải",20,"QN");
+    let sv2 = new SinhVien("hải2",30,"QN");
+    let sv3 = new SinhVien("hải3",20,"QN");
+    sv3.setTen("Chanh20");
+    console.log("tên sinh viên là : "+ sv3.getTen())
+    sv2.hoc("Toán");
+</script>
+</body>
+</html>

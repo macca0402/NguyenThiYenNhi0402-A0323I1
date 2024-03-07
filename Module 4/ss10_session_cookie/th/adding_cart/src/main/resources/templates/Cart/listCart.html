@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách giỏ hàng</title>
+
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Giỏ hàng</h1>
+<div th:insert="~{menu}"></div>
+<form th:action="@{/cart/pum}" th:object="${cart}" method="get">
+    <table border="5">
+        <tr>
+            <th>Selection</th>
+            <th>STT</th>
+            <th>Name product</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+
+            <tr th:each="product,status:${cart.listProduct}">
+                <td>
+                    <input type="checkbox"  name="product" th:value="${product.getKey().id}">
+                </td>
+                <td th:text="${status.count}"></td>
+                <td th:text="${product.getKey().name}"></td>
+                <td><img th:src="@{${product.getKey().image}}" alt=""/></td>
+                <td th:text="${product.getKey().price}"></td>
+                <td >
+                    <input type="text" th:value="${product.getValue()}">
+                    <a th:href="@{/cart/updateUp/{id}(id=${product.getKey().id})}"><input readonly type="button" value="+"></a>
+                    <a th:href="@{/cart/updateDown/{id}(id=${product.getKey().id})}"><input readonly type="button" value="-"></a>
+                </td>
+                <td><a th:href="@{/cart/delete(id=${product.getKey().getId()})}"><input type="button" value="Delete"></a></td>
+            </tr>
+            <tr>
+                <td class="right"><span
+                        th:text="${result}"></span>
+                </td>
+                <td><input type="submit" value="Total payment"></td>
+            </tr>
+
+    </table>
+</form>
+
+<p th:text="${message}"></p>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img style="width: 300px;height: 300px" id="img-of-the-day">
+<script>
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=omfKMdoPnWtyye12G7lY6G8LPgiZ57Wlz4mjhuqv';
+    let request = new XMLHttpRequest();
+    request.open('GET', query);
+    request.onload = function () {
+        if (request.status === 200) {
+            let response = JSON.parse(request.responseText);
+            document.getElementById('img-of-the-day').setAttribute('src', response.url);
+        }
+    };
+    request.send();
+</script>
+<br>
+<form th:action="@{/create}" method="post" th:object="${image}">
+    <input hidden="hidden" th:field="*{id}" type="text">
+    <select th:field="*{point}">
+        <option th:value="1">1</option>
+        <option th:value="2">2</option>
+        <option th:value="3">3</option>
+        <option th:value="4">4</option>
+        <option th:value="5">5</option>
+    </select><br>
+    Author:<br>
+    <input type="text" th:field="*{author}"><br>
+    Feedback:<br>
+    <textarea cols="20" rows="10" th:field="*{feedback}"></textarea><br>
+    <input  hidden="hidden" type="number" th:field="*{tim}">
+    <button type="submit">Comment</button>
+</form>
+
+
+
+<p th:text="${message}"></p>
+<th:foreach th:each="comment:${listComment}" th:object="${comment}">
+    <hr>
+    <form th:action="@{/like/{like}(like=${comment.id})}" method="get">
+        <span th:text="${'+'+comment.tim}"></span>
+        <span th:text="${comment.feedback}"></span>
+        <button type="submit">Like</button>
+    </form>
+</th:foreach>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doanhSoBanHang = +prompt("Nhap doanh so : ");
+    let hoaHong;
+    if (doanhSoBanHang < 10) {
+        hoaHong = doanhSoBanHang * 0.05 * 10000;
+    } else if (doanhSoBanHang < 20) {
+        hoaHong = doanhSoBanHang * 0.06 * 10000;
+    } else if (doanhSoBanHang < 30) {
+        hoaHong = doanhSoBanHang * 0.1 * 10000;
+    } else if (doanhSoBanHang > 100) {
+        hoaHong = doanhSoBanHang * 0.5 * 10000;
+    }
+
+    alert("Hoa hong nhan duoc la: " + hoaHong);
+
+</script>
+
+</body>
+</html>

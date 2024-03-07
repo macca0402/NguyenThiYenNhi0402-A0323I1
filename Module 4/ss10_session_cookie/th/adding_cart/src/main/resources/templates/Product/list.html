@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sản phẩm</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Dánh sách sản phẩm</h1>
+<div th:insert="~{menu}"></div>
+<table border="5">
+    <tr>
+        <th>Code item</th>
+        <th>Name item</th>
+        <th>Price</th>
+        <th>Image</th>
+
+    </tr>
+    <tr th:each="product:${listProduct}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td><div><img th:src="@{${product.image}}" alt=""></div></td>
+
+        <td><a th:href="@{/product/add-to-cart/{id}(id=${product.id})}">
+            <iconify-icon icon="pepicons-print:cart" style="color: pink;" width="50" height="50"></iconify-icon></a></td>
+    </tr>
+</table>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+</html>

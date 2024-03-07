@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const phiBatBuoc = 25000;
+    let soPhutGoi = +prompt("Nhap tong so phut goi: ");
+    let tienCuoc;
+    if (soPhutGoi <= 50) {
+        tienCuoc = phiBatBuoc + soPhutGoi * 600;
+    } else if (soPhutGoi <= 200) {
+        tienCuoc = phiBatBuoc + (soPhutGoi - 100) * 600 + (soPhutGoi - 50) * 400;
+    }
+    alert("Phi cuoc phai tra: " + tienCuoc);
+
+
+</script>
+
+</body>
+</html>

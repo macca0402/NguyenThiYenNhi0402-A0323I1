@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="DemoCanvas" width="500" height="600"></canvas>
+<script>
+    class Rectangle {
+        constructor(chieuDai, chieuRong) {
+            this.chieuDai = chieuDai;
+            this.chieuRong = chieuRong;
+        }
+
+        getDai() {
+            return this.chieuDai;
+        }
+
+        getRong() {
+            return this.chieuRong;
+        }
+
+        setDai(chieuDai) {
+            this.chieuDai = chieuDai;
+        }
+
+        setRong(chieuRong) {
+            this.chieuRong = chieuRong;
+        }
+
+        areaRectangle() {
+            return this.chieuDai * this.chieuRong;
+        }
+
+        perimeterRectangle() {
+            return (this.chieuDai + this.chieuRong) * 2;
+        }
+
+        // drawRec(){
+        //     var canvas = document.getElementById("DemoCanvas");
+        //     if (canvas.getContext)
+        //     {
+        //         var ctx = canvas.getContext('2d');
+        //         ctx.lineWidth = "3";
+        //         ctx.strokeStyle = "red";
+        //         ctx.strokeRect(5, 5, 300, 250);
+        //     }
+        // }
+    }
+
+    let baiTap1 = new Rectangle(8, 4);
+    // alert(baiTap1.drawRec());
+
+    alert(baiTap1.areaRectangle());
+    alert(baiTap1.perimeterRectangle());
+    baiTap1.setDai(8);
+    baiTap1.setRong(2);
+    alert(baiTap1.areaRectangle());
+    alert(baiTap1.perimeterRectangle());
+</script>
+
+</body>
+</html>

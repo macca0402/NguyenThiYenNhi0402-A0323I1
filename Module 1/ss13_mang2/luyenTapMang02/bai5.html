@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Bài 5: Viết một chương trình nhập vào 2 chuỗi,
+sau đó kiểm tra xem hai chuỗi có giống nhau hay không.-->
+<body>
+<script>
+    let chuoiA = prompt("Nhap vao chuoi A: ");
+    // console.log(chuoiA+ "\n"+ chuoiA.length);
+    let chuoiB = prompt("Nhap vao  chuoi B: ");
+    let sum = 0;
+    let result = chuoiA.localeCompare(chuoiB);
+    if (result == 0) {
+        alert("Hai chuoi bang nhau");
+    } else {
+        alert("Khong bang nhau.")
+    }
+
+
+</script>
+
+</body>
+</html>

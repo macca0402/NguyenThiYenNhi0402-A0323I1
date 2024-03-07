@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let m = +prompt("Nhap m: ");
+    let n = +prompt("Nhap n: ");
+    let maTran = new Array(m);
+    for (let i = 0; i < maTran.length; i++) {
+        maTran[i] = new Array(n)
+        for (let j = 0; j < maTran[i].length; j++) {
+            maTran[i][j] = +prompt("Nhap gia tri A[" + i + "]" + "[" + j + "]:");
+        }
+    }
+    for (let i = 0; i < maTran.length; i++) {
+        for (let j = 0; j < maTran[i].length; j++) {
+            document.writeln(maTran[i][j]);
+        }
+        document.writeln("<br>")
+    }
+
+    function tongChan(maTran) {
+        debugger
+        let sum = 0;
+        for (let i = 0; i < maTran.length; i++) {
+            for (let j = 0; j < maTran[i].length; j++) {
+                if (maTran[i][j] % 2 == 0) {
+                    sum = sum + maTran[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    document.writeln("<br>" + "Tong cac so chan la :" + tongChan(maTran));
+
+</script>
+
+</body>
+</html>

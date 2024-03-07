@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số đầu tiên trong dãy fibonacci </title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let a1 = 0;
+    let a2 = 1;
+    let i = 0;
+    while (true) {
+        count = a1 + a2;
+        a1 = a2;
+        a2 = count;
+        if (a1 % 5 == 0) {
+            document.writeln(a1 + "<br>");
+            break;
+        }
+    }
+</script>
+
+</body>
+</html>

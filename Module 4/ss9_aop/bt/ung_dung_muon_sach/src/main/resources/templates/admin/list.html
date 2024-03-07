@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kho sách</title>
+</head>
+<body>
+
+<h1>Kho sách thư viện</h1>
+<div th:insert="~{home/header::header_admin}"></div>
+<table border="2">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Author</th>
+    </tr>
+    <tr th:each="book:${list}" th:object="${book}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{quantity}"></td>
+        <td th:text="*{author}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

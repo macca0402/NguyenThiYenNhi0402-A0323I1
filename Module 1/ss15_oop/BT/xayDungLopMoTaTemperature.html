@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            if (doC < -273) {
+                alert("Nhiet do khong hop le.")
+            } else {
+                this.doC = doC;
+            }
+        }
+
+        getC() {
+            return this.doC;
+        }
+
+        setC(doC) {
+            this.doC = doC;
+        }
+
+        CToF() {
+            return (this.doC * 1.8) + 32;
+        }
+
+        toString() {
+            return this.doC + " do C chuyen sang nhiet do F la: " + this.CToF() + "F";
+        }
+    }
+
+    let myBT = new Temperature(-300);
+    alert(myBT.toString());
+</script>
+
+</body>
+</html>

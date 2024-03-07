@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangA = [1, 2, 3, 4, 1, 4, 1, 1, 1, 1, 7];
+    let mangB = [6, 7, 1, 2, 6, 7, 6, 7];
+
+    function xoaTrung(mang) {
+        for (let i = 0; i < mang.length; i++) {
+            for (let j = i + 1; j < mang.length; j++) {
+                if (mang[i] == mang[j]) {
+                    for (let e = mang.indexOf(mang[j]); e < mang.length; e++) {
+                        mang[j] = mang[j + 1];
+                        mang.length--;
+                    }
+
+                }
+            }
+        }
+    }
+
+    // a= 1,2,3,4
+    //b = 6,7,1,2
+    let mangC = new Array();
+
+    function missingValue(A, B) {
+        let dem = 0;
+        for (let i = 0; i < B.length; i++) {
+            for (let j = 0; j < A.length; j++) {
+                if (A[j] == B[i]) {
+                    dem++;
+                }
+            }
+            if (dem == 0) {
+                mangC.push(B[i]);
+            }
+
+        }
+        return mangC;
+    }
+
+    xoaTrung(mangA);
+    xoaTrung(mangB);
+    alert(missingValue(mangA, mangB));
+
+
+</script>
+
+</body>
+</html>

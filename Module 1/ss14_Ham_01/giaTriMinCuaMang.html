@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [65, 2, 3, 4, 3, 4, 34, 31];
+    let arr1 = [-1, 122, 2, 34345, 3, 543, 54, 3, -111];
+    let arr2 = [7, 12, 6, 9, 20, 56, 89];
+    let arr3 = [];
+    let arr4 = [0, 0, 0, 0, 0, 0];
+
+    function findMinArray(mang) {
+        if (mang.length == 0) {
+            return -1;
+        }
+        let min = mang[0];
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] < min) {
+                min = mang[i];
+            }
+        }
+        return min;
+    }
+
+    alert(findMinArray(arr));
+    alert(findMinArray(arr1));
+    alert(findMinArray(arr2));
+    alert(findMinArray(arr3));
+    alert(findMinArray(arr4));
+
+</script>
+</body>
+</html>

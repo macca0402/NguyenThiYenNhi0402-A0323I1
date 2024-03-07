@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhap chuoi: ");
+
+    function demKyTuHoa(chuoi) {
+        let mangChuoi = new Array();
+        let mangDem = new Array();
+        mangChuoi = chuoi.split('');
+        for (let i = 0; i < mangChuoi.length; i++) {
+            if (mangChuoi[i] >= 'A' && mangChuoi[i] <= 'Z') {
+                mangDem.push(mangChuoi[i]);
+            }
+        }
+
+        if (mangDem.length != 0) {
+            document.writeln("So ky tu hoa: " + mangDem.length);
+        } else {
+            document.writeln("The String is not contain upper char.")
+        }
+    }
+
+    demKyTuHoa(chuoi);
+
+
+</script>
+
+</body>
+</html>

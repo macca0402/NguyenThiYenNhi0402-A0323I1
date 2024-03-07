@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên
+ và đảo ngược các phần tử trong mảng đó.
+-->
+<script>
+    let n = +prompt("Nhap so luong phan tu: ");
+    let mang4 = new Array(n);
+
+    function nhap() {
+        for (let i = 0; i < mang4.length; i++) {
+            mang4[i] = prompt("Nhap gia tri thu " + i + 'cua mang: ');
+        }
+    }
+
+    function xuat() {
+        for (let i = 0; i < mang4.length; i++) {
+            console.log(mang4[i] + "\n");
+        }
+    }
+
+    alert(nhap());
+    console.log(xuat());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body >
+<div style="height: 100000px">
+    <input type="text" id="bankinh" placeholder="Nhap ban kinh" >
+    <button onclick="calculate()" > Tinh </button>
+</div>
+
+</body>
+
+
+<script>
+  //  S.addEventListener("result",calculate);
+    function calculate() {
+        let R=document.getElementById("bankinh").value;
+        let S=Math.pow(R,2)*Math.PI;
+        document.write("Dien tich hinh tron : "+S);
+
+    }
+</script>
+<!--<script>-->
+<!--    let radius=parseFloat(prompt("Enter radius:  "));-->
+<!--    let area =Math.pow(radius,2)*Math.PI;-->
+<!--    alert("Area is : "+area);-->
+<!--</script>-->
+</html>

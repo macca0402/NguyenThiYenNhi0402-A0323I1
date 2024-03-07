@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = prompt("nhap vao :");
+    array = array.toString();
+    document.writeln(array);
+    let kyTu = prompt("Nhap vao ky tu: ");
+    let sum = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == kyTu) {
+            sum++;
+        }
+    }
+
+    function isKT() {
+        if (sum == 0) {
+            document.writeln(-1);
+        } else {
+            document.writeln("So lan xuat hien:" + sum)
+        }
+    }
+
+    document.writeln("<br>");
+    isKT();
+
+</script>
+
+</body>
+</html>

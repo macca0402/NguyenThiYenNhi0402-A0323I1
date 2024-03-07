@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In dãy Fibonaci</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    a1 = 0;
+    let a2 = 1;
+    let n = +prompt("Nhap vao tong so can in : ");
+    let dem = 0;
+    while (dem < n) {
+        count = a1 + a2;
+        dem++;
+        a1 = a2;
+        a2 = count;
+        document.writeln(a1 + "<br>");
+    }
+
+
+</script>
+
+</body>
+</html>

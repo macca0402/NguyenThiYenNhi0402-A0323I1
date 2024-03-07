@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function processConfirm(answer) {
+        let ketQua = '';
+        if (answer) {
+            ketQua = "Excellent. We'll play a nice game of chess."
+        } else {
+            ketQua = "Maybe later then."
+        }
+        return ketQua;
+    }
+
+    let confirmAnswer = confirm("Shall we play a game???");
+    let theAnswer = processConfirm(confirmAnswer);
+    alert(theAnswer);
+
+</script>
+
+</body>
+</html>

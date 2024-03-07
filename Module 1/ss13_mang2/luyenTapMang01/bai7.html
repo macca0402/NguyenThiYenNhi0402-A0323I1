@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử,
+ nhập/tạo phần tử số nguyên V.
+Chương trình kiểm tra xem V có thuộc mảng đã cho không,
+ nếu V thuộc mảng đã cho xoá V khỏi mảng
+(Bản chất việc xoá ở đây tức là dịch phần
+  tử ở bên phải V sang vị trí của V,
+và gán 0 cho phần tử cuối cùng của mảng)
+-->
+<body>
+<script>
+    let mang7 = new Array(10);
+    for (let i = 0; i < mang7.length; i++) {
+        mang7[i] = +prompt("Nhap gai tri thu " + i + " : ");
+    }
+    document.writeln("Gia tri cua mang la: ");
+    for (let i = 0; i < mang7.length; i++) {
+        document.writeln(mang7[i] + "&nbsp&nbsp");
+    }
+    let soNguyenV = +prompt("Nhap so nguyen V: ");
+    let vt = -1;
+    for (let i = 0; i < mang7.length; i++) {
+        if (mang7[i] === soNguyenV) {
+            vt = i;
+        }
+    }
+    // document.writeln('<br>'+ vt+'<br>');
+    for (let i = vt; i < mang7.length - 1; i++) {
+        mang7[i] = mang7[i + 1];
+    }
+    mang7.length--;
+    for (let i = 0; i < mang7.length; i++) {
+        document.writeln('<br>' + mang7[i] + "&nbsp&nbsp");
+    }
+</script>
+
+</body>
+</html>

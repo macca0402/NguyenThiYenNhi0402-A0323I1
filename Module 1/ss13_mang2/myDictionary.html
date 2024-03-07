@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td, th {
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 50%;
+            height: 25px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<table border="2" width="500px">
+    <tr>
+        <td>
+            <h1> My dictionary</h1>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input id='timkiem' type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="myDictionary()">Tim Kiem</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label id="result"></label>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    let mang1 = ['school', 'love', 'children'];
+    let mang2 = ['trường học', 'tình cảm,tình yêu', 'trẻ con'];
+
+    function myDictionary() {
+        let search = document.getElementById('timkiem').value;
+        if (mang1.indexOf(search) !== -1) {
+            document.getElementById('result').innerHTML = mang2[mang1.indexOf(search)];
+        } else {
+            document.getElementById('result').innerHTML = "Khong tim thay ket qua."
+        }
+    }
+</script>
+</html>

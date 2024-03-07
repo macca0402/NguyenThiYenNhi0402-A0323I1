@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = +prompt("Nhap m: ");
+    let n = +prompt("Nhap n: ");
+    let maTran = new Array(m);
+    for (let i = 0; i < maTran.length; i++) {
+        maTran[i] = new Array(n)
+        for (let j = 0; j < maTran[i].length; j++) {
+            maTran[i][j] = +prompt("Nhap gia tri A[" + i + "]" + "[" + j + "]:");
+        }
+    }
+    for (let i = 0; i < maTran.length; i++) {
+        for (let j = 0; j < maTran[i].length; j++) {
+            document.writeln(maTran[i][j]);
+        }
+        document.writeln("<br>")
+    }
+
+    function xetSoNguyenTo(a) {
+
+        if (a < 2) {
+            return false;
+        }
+        if (a > 2) {
+            for (let i = 2; i < a; i++) {
+                if (a % i == 0) {
+                    return false;//khi sum thay doi thi chung to ko phai la SNT
+                }
+            }
+        }
+        return true;
+    }
+
+    function tongSNT(maTran) {
+        let sum = 0;
+        for (let i = 0; i < maTran.length; i++) {
+            for (let j = 0; j < maTran[i].length; j++) {
+                if (xetSoNguyenTo(maTran[i][j]) == true) {
+                    sum++;
+                }
+            }
+        }
+        return sum;
+    }
+
+    document.writeln("<br>" + "Tong cac so nguyen to trong ma tran: " + tongSNT(maTran));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhap n:");
+    } while (n > 21);
+    let mangSoNguyen = new Array(n);
+    let mangSoChan = new Array();
+    let mangSoLe = new Array();
+    for (let i = 0; i < n; i++) {
+        mangSoNguyen[i] = +prompt("Nhap gia tri thu : " + i);
+        if (mangSoNguyen[i] % 2 == 0) {
+            mangSoChan.push(mangSoNguyen[i]);
+        } else {
+            mangSoLe.push(mangSoNguyen[i]);
+        }
+    }
+    let sum = 0;
+    for (let i = 0; i < mangSoChan.length; i++) {
+        sum = sum + mangSoChan[i];
+    }
+    let sum1 = 0;
+    for (let i = 0; i < mangSoLe.length; i++) {
+        sum1 = sum1 + mangSoLe[i];
+    }
+    document.writeln(mangSoNguyen);
+    document.writeln("<br>")
+    document.writeln(mangSoChan);
+    document.writeln("<br>")
+    document.writeln(mangSoLe);
+    document.writeln("<br>")
+    document.writeln("Hieu la: " + (sum - sum1));
+
+
+</script>
+
+</body>
+</html>

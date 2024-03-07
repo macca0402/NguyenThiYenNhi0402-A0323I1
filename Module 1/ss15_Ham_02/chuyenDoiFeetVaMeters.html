@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr, th {
+            width: 200px;
+        }
+
+        table {
+            background-color: aquamarine;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+<table border="1">
+    <tr>
+        <th>
+            <b>Feet</b>
+        </th>
+        <th>
+            <b>Meters</b>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <select value="Lua chon " id="feet" onclick="feetToMeters()">
+                <option>1.0</option>
+                <option>2.0</option>
+                <option>9.0</option>
+                <option>10.0</option>
+            </select>
+        </th>
+        <th>
+            <p id="meters"></p>
+        </th>
+    </tr>
+</table>
+
+<table border="1">
+    <tr>
+        <th>
+            <b>Meters</b>
+        </th>
+        <th>
+            <b>Feet</b>
+        </th>
+
+    </tr>
+    <tr>
+        <th>
+            <select id="meter" onclick="metersToFeet()">
+                <option>0.305</option>
+                <option>0.610</option>
+                <option>2.745</option>
+                <option>10.0</option>
+            </select>
+        </th>
+        <th>
+            <p id="met"></p>
+        </th>
+    </tr>
+</table>
+<script>
+    function feetToMeters(feet) {
+        document.getElementById("meters").innerHTML = document.getElementById("feet").value * 0.305;
+    }
+
+    function metersToFeet(meter) {
+        document.getElementById("met").innerHTML = document.getElementById("meter").value * 3.279;
+    }
+
+</script>
+
+</body>
+</html>

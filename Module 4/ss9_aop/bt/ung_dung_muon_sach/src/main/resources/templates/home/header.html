@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="header_admin">
+    <a th:href="@{/admin/create}">
+        <button>Create new book</button>
+    </a>
+    <a th:href="@{/admin/list}">
+        <button>List book of library</button>
+    </a>
+    <a th:href="@{/admin/list_borrow_user}">
+        <button>List borrow book</button>
+    </a>
+</div>
+<div th:fragment="header_user">
+    <a th:href="@{/user/borrow/list}">
+        <button>List book of library</button>
+    </a>
+    <a th:href="@{/user/return_book}">
+        <button>Return a borrow book</button>
+    </a>
+</div>
+
+</body>
+</html>

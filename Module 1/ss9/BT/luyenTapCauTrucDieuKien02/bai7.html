@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2.</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhap a: ");
+    let b = +prompt("Nhap b: ");
+    let c = +prompt("Nhap c: ");
+    let denTa = Math.pow(b, 2) - 4 * a * c;
+    if (a != 0) {
+        if (denTa > 0) {
+            let x1 = (-b + Math.sqrt(denTa)) / (2 * a);
+            let x2 = (-b - Math.sqrt(denTa)) / (2 * a);
+            alert("Phuong trinh co 2 nghiem : x1 = " + x1 + " x2 = " + x2);
+        } else if (denTa == 0) {
+            let x3 = -b / (2 * a);
+            alert("Phuong trinh 1 nghiem: " + x3);
+        } else if (denTa < 0) {
+            alert("Phuong trinh vo nghiem.")
+        }
+    } else if (a == 0 && b != 0) {
+        let x4 = -c / b;
+        alert("Phuong trinh co 1 nghiem: x= " + x4)
+    } else if (a == 0 && b == 0) {
+        alert("Phuong trinh vo nghiem .")
+    } else if (a == 0 & c == 0) {
+        alert("Phuong trinh vo so nghiem.")
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="bankinh" ><br>
+<small style="color: red" id="check"></small><br>
+<button onclick="calculate()">Tinh chu vi</button>
+</body>
+<script>
+    let R=document.getElementById("bankinh").value;
+    function calculate() {
+        let S=2*R*Math.PI;
+        document.write("Chu vi hinh tron : "+ S);
+    }
+</script>
+</html>

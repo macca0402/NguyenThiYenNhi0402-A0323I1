@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = 0, sum = 0;
+    let a1 = 0;
+    let a2 = 1;
+    let soLuongFibonacci = 0;
+    while (soLuongFibonacci < 20) {
+        count = a1 + a2;
+        soLuongFibonacci++;
+        a1 = a2;
+        a2 = count;
+        sum = sum + a1;
+        // document.writeln(a1+"<br>")
+    }
+    document.writeln("Tong cua 20 so dau tien Fibonacci:" + sum);
+</script>
+
+</body>
+</html>

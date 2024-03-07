@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    do {
+        baiKiemTra = +prompt("Nhap diem bai kiem tra: ");
+    } while (baiKiemTra < 0 || baiKiemTra > 10);
+    do {
+        baiGiuaKy = +prompt("Nhap diem bai Giua Ky: ");
+    } while (baiGiuaKy < 0 || baiGiuaKy > 10);
+    do {
+        baiCuoiKy = +prompt("Nhap diem bai Cuoi Ky: ");
+    } while (baiCuoiKy < 0 || baiCuoiKy > 10);
+
+    let trungBinh = (baiKiemTra + baiCuoiKy + baiGiuaKy) / 3;
+    if (trungBinh >= 6.5 && trungBinh <= 7.9) {
+        alert("Xep loai Kha")
+    } else if (trungBinh >= 5 && trungBinh <= 6.4) {
+        alert("Xep loai Trung Binh.")
+    } else if (trungBinh >= 3.5 && trungBinh <= 4.9) {
+        alert("Xep loai Yeu.")
+    } else if (trungBinh < 3.5) {
+        alert("Xep Loai Kem.")
+    } else {
+        alert("Xep loai Gioi.")
+    }
+</script>
+
+</body>
+</html>

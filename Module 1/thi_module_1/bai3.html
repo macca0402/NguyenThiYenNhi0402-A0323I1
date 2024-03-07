@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangSoNguyen = [1, 5, 6, 23, 8, 47, 10, 3];
+
+    function isSoNguyen(n) {
+        if (n < 2) {
+            return false;
+        }
+        if (n > 2) {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function sapXepTangDan(array) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    let tmp = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp;
+                }
+            }
+        }
+    }
+
+    function isMangSoNguyenTo(array) {
+        let mangNguyenTo = new Array();
+        for (let i = 0; i < array.length; i++) {
+            if (isSoNguyen(array[i])) {
+                mangNguyenTo.push(array[i]);
+            }
+        }
+        sapXepTangDan(mangNguyenTo);
+        document.writeln(mangNguyenTo);
+    }
+
+    isMangSoNguyenTo(mangSoNguyen);
+</script>
+
+</body>
+</html>

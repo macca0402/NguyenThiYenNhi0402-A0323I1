@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách blog</title>
+</head>
+<body>
+<a th:href="@{/create}">
+    <button>
+        Create
+    </button>
+</a>
+<table border="2">
+    <tr>
+        <td>ID</td>
+        <td>Author</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Action</td>
+    </tr>
+    <tr th:each="blog:${blogList}">
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.author}"></td>
+        <td th:text="${blog.title}"></td>
+        <td th:text="${blog.content}"></td>
+        <td><a th:href="@{/update(id=${blog.id})}"><button>Update</button></a></td>
+        <td><a th:href="@{/delete(id=${blog.id})}"><button>Remove</button></a></td>
+        <td><a th:href="@{/view(id=${blog.id})}"><button>View</button></a></td>
+    </tr>
+
+</table>
+</body>
+</html>

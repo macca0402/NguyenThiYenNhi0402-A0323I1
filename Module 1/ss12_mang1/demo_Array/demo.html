@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // khai báo và khởi tạo mảng chuỗi
+    let car =["Honda", "Toyota","Huyndai"];
+    // let num =[10,20,30,40];
+    // let mix =["Chánh",10,true];
+    //
+    // alert(car[1]);// hiển thi ra tên xe ở vị trí 1
+    // // đổi giá trị Toyota thành Vinfast
+    // car[1]="Vinfast";
+    // alert("giá trị sau khi thay đổi: " + car[1])
+    // let car1 = new Array("Vinfast","BMW");
+    // let num1 = new Array(50,100,200);
+    // let num2 = new Array(10);//
+    // alert("mảng: "+ num2);
+    // alert(num2[0]);
+    // alert(num2.length);// độ dài của mảng
+    // let num3 = Array(10,20,30); // không nên sử dụng
+
+    // for (let i = 0; i <car.length; i++) {
+    //     console.log((i+1)+ ". Hãng xe " + car[i]);
+    // }
+
+    let numbers = [2,3,7,5,8,12,21];
+    numbers.sort(function (a,b) {
+        return b-a;
+    });
+    alert(numbers);
+    // // in ra những phần tử là số chẵn 2,8,12
+    // for (let i = 0; i <numbers.length ; i++) {
+    //     if (numbers[i]%2==0){
+    //         console.log(numbers[i]);
+    //     }
+    // }
+    // sử dụng for in => để lấy chỉ số index
+    // for (let index in numbers) {
+    //     console.log(index)
+    // }
+    // // dùng for of => lấy giá trị
+    // for ( let num of numbers){
+    //     console.log(num)
+    // }
+    // thêm phần tử vào đầu mảng
+    //  car.unshift("VinFast");
+    //  alert(car);
+    //  // thêm vào vị trí sau Toyota => Yamaha
+    // car.splice(3,0,"Yamaha");
+    // alert(car)
+    //  // xoá Toyota
+    // car.splice(2,1);
+    // alert(car);
+    // car.sort();
+    alert(car);
+
+</script>
+</body>
+</html>

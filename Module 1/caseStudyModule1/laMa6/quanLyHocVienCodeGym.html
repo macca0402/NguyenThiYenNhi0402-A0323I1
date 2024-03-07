@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="add()">Thêm học viên</button>
+<p id="result"></p>
+
+
+<script>
+    class HocVien {
+        constructor(maHocVien, ten, lop, email, ngaySinh, module) {
+            this.maHocVien = maHocVien;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.module = module;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setModule(value) {
+            this.module = value;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+        setNgaySinh(value) {
+            this.ngaySinh = value;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(value) {
+            this.email = value;
+        }
+
+        getLop() {
+            return this.lop;
+        }
+
+        setLop(value) {
+            this.lop = value;
+        }
+
+        getMaHocVien() {
+            return this.maHocVien;
+        }
+
+        setMaHocVien(value) {
+            this.maHocVien = value;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(value) {
+            this.ten = value;
+        }
+    }
+
+    let student1 = new HocVien("HV_0001", "Nguyễn Văn A", "C1022G1", "nguyenvanA@gmail.com", '01/01/2004');
+    let student2 = new HocVien("HV_0002", "Nguyễn Văn B", "C1022G1", "nguyenvanB@gmail.com", '01/01/2005');
+    let student3 = new HocVien("HV_0003", "Nguyễn Văn C", "C1022G1", "nguyenvanC@gmail.com", '01/01/2006');
+    let studenList = [];
+    studenList.push(student1, student2, student3);
+    display(studenList);
+
+    function add() {
+        let maSV = prompt("Nhap ma Hv:");
+        let tenSV = prompt("Nhap ten:");
+        let lopSV = prompt("Nhap lop:");
+        let emailSV = prompt("Nhap email:");
+        let ngaySinhSV = prompt("Nhap ngay sinh:");
+        let flag = false;
+        for (let i = 0; i < studenList.length; i++) {
+            if (studenList[i].getMaHocVien() == maSV) {
+                flag = true;
+                alert("Ma hoc vien trung!!");
+                break;
+            }
+        }
+        if (flag == false) {
+            let newStudent = new HocVien(maSV, tenSV, lopSV, emailSV, ngaySinhSV);
+            studenList.push(newStudent);
+            display(studenList);
+        }
+
+    }
+
+    function display(list) {
+        let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <th>Mã học viên</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>Lớp</th>\n' +
+            '        <th>Email</th>\n' +
+            '        <th>Ngày sinh</th>\n' +
+            '        <th>Edit</th>\n' +
+            '        <th>Delete</th>\n' +
+            '    </tr>'
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + list[i].getMaHocVien() + '</td>\n' +
+                '        <td>' + list[i].getTen() + '</td>\n' +
+                '        <td>' + list[i].getLop() + '</td>\n' +
+                '        <td>' + list[i].getEmail() + '</td>\n' +
+                '        <td>' + list[i].getNgaySinh() + '</td>\n' +
+                '        <td><button onclick="editStudent(' + i + ')">Edit</button></td>\n' +
+                '        <td><button onclick="deleteList(' + i + ')">Delete</button></td>\n' +
+                '    </tr>'
+        }
+        tableString += '</table>';
+        document.getElementById('result').innerHTML = tableString;
+    }
+
+    function editStudent(index) {
+        let editMa = prompt("Moi ban edit: ", studenList[index].getMaHocVien());
+        studenList[index].setMaHocVien(editMa);
+        let editTen = prompt("Moi ban edit: ", studenList[index].getTen());
+        studenList[index].setTen(editTen);
+        let editLop = prompt("Moi ban edit: ", studenList[index].getLop());
+        studenList[index].setLop(editLop);
+        let editEmail = prompt("Moi ban edit: ", studenList[index].getEmail());
+        studenList[index].setEmail(editEmail);
+        let editNgaySinh = prompt("Moi ban edit: ", studenList[index].getNgaySinh());
+        studenList[index].setNgaySinh(editNgaySinh);
+        display(studenList);
+    }
+
+    function deleteList(index) {
+        studenList.splice(index, 1);
+        display(studenList);
+    }
+
+</script>
+
+</body>
+</html>

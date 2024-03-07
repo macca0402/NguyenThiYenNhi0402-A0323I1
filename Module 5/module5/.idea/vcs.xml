@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/kho" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/BT/ds_sinh_vien" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/BT/sign-in-form-bootstrap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/TH/demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/TH/fruits" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/TH/hien_thi_thoi_gian" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/TH/thong_tin_trinh_duyet_web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/redemo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss2/redemo1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/BT/project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/TH/button_tang_giam" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/TH/class_component" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/TH/doi_mau_nen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/TH/function_component" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/TH/thong_bao" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/TH/user_login" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/demo-props" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss3/redemo1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss4/bai_tap" vcs="Git" />
+  </component>
+</project>

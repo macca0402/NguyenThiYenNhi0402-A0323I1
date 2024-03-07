@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+
+            border: none;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.3%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        .row {
+            display: block;
+        }
+
+        [class*=col-] {
+            float: left;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .col-sm-1 {
+                width: 8.33%
+            }
+
+            .col-sm-2 {
+                width: 16.66%
+            }
+
+            .col-sm-3 {
+                width: 25%;
+            }
+
+            .col-sm-4 {
+                width: 33.3%
+            }
+
+            .col-sm-5 {
+                width: 41.66%
+            }
+
+            .col-sm-6 {
+                width: 50%
+            }
+
+            .col-sm-7 {
+                width: 58.33%
+            }
+
+            .col-sm-8 {
+                width: 66.66%;
+            }
+
+            .col-sm-9 {
+                width: 75%;
+            }
+
+            .col-sm-10 {
+                width: 83.33%;
+
+            }
+
+            .col-sm-11 {
+                width: 91.66%;
+            }
+
+            .col-sm-12 {
+                width: 100%;
+            }
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .col-xs-1 {
+                width: 8.33%
+            }
+
+            .col-xs-2 {
+                width: 16.66%
+            }
+
+            .col-xs-3 {
+                width: 25%;
+            }
+
+            .col-xs-4 {
+                width: 33.3%
+            }
+
+            .col-xs-5 {
+                width: 41.66%
+            }
+
+            .col-xs-6 {
+                width: 50%
+            }
+
+            .col-xs-7 {
+                width: 58.33%
+            }
+
+            .col-xs-8 {
+                width: 66.66%;
+            }
+
+            .col-xs-9 {
+                width: 75%;
+            }
+
+            .col-xs-10 {
+                width: 83.33%;
+
+            }
+
+            .col-xs-11 {
+                width: 91.66%;
+            }
+
+            .col-xs-12 {
+                width: 100%;
+            }
+        }
+
+        .khung {
+            background-color: lightblue;
+            width: 965px;
+            height: 500px;
+            overflow: auto; /*tự động tạo thanh scroll khi nội dung trong thẻ này bị tràn ra ngoài so với chiều cao được thiết lập*/
+            align-items: flex-start;
+            margin: 49px auto;
+            border-radius: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 36px 0;
+            display: flex;
+
+
+        }
+
+        .card {
+            background-color: azure;
+            width: 90%;
+            height: 40%;
+            margin: 5px 38px;
+            border-radius: 20px;
+        }
+
+        .image {
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .name_product {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap; /* xuống dòng nếu không đủ độ dài chứa pt  --> nowrap : là cho phép xuống dòng chỉ nằm trên 1 dòng */
+        }
+
+        .option {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 16px 40px;
+        }
+
+        .content-1 {
+
+
+            padding: 5px 50px;
+        }
+
+        .content-2 {
+
+            padding: 5px 50px;
+        }
+
+        .content-3 {
+            padding: 0px 50px;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            background-color: azure;
+            border: 2px solid black;
+            color: black;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px 6px;
+        }
+
+        button:hover {
+            background-color: cornflowerblue;
+            color: azure;
+        }
+
+        input[type="checkbox"] {
+            width: 100%;
+            height: 50px;
+            margin: 10px 5px;
+        }
+
+        input[type="text"] {
+            width: 19%;
+            height: 24%;
+            margin: 10px 5px;
+            border: 3px solid black;
+            background-color: white;
+            align-content: center;
+            border-radius: 5px;
+        }
+
+        .content-3 button {
+            width: 30px;
+            height: 30px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .total {
+            background-color: white;
+            width: 90%;
+            height: auto; /* Thay đổi chiều cao thành auto để phù hợp với nội dung bên trong */
+            margin: 5px auto; /* Sử dụng auto để căn giữa theo chiều ngang */
+            border-radius: 20px;
+            text-align: center; /* Căn giữa nội dung theo chiều ngang */
+            padding: 20px; /* Thêm padding để tạo khoảng cách xung quanh nội dung */
+            box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước thẻ */
+        }
+
+        /* Chỉnh lại nội dung trong total */
+        .total span {
+            font-size: 18px; /* Cỡ chữ */
+            color: black; /* Màu chữ */
+            /* Thêm các thuộc tính khác nếu cần thiết */
+        }
+
+
+
+        .payment {
+            /* Thay đổi chiều cao thành auto để phù hợp với nội dung bên trong */
+            margin: 5px auto; /* Sử dụng auto để căn giữa theo chiều ngang */
+            border-radius: 20px;
+            text-align: center; /* Căn giữa nội dung theo chiều ngang */
+            padding: 20px; /* Thêm padding để tạo khoảng cách xung quanh nội dung */
+            box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước thẻ */
+        }
+
+        /* Chỉnh lại nội dung trong total */
+        .payment button {
+            width: 200px;
+            font-size: 18px; /* Cỡ chữ */
+            color: black; /* Màu chữ */
+            /* Thêm các thuộc tính khác nếu cần thiết */
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/cart/pum}" th:object="${cart}" method="get">
+    <div class="khung">
+        <thead>
+        <div>
+            <h1>Danh sách giỏ hàng</h1>
+            <div style="  text-align: center" th:insert="home"></div>
+        </div>
+        </thead>
+
+        <tbody>
+        <th:block th:each="product,status:${cart.listProduct}">
+            <div class="card">
+                <div class="col-1">
+                    <input type="checkbox" name="product" th:value="${product.getKey().id}">
+                </div>
+                <div class="image col-3">
+                    <img th:src="@{${product.getKey().image}}" alt=""/></div>
+                <div class="name_product col-5">
+                    <div class="content-1 col-12">
+                        <h2 th:text="${product.getKey().name}">Tên sản phẩm</h2>
+                    </div>
+                    <div class="content-2 col-12">
+                        <span th:text="${'Giá bán :'+product.getKey().price}"></span>
+                    </div>
+                    <div class="content-3 col-12">
+                        <span>Số lượng : </span>
+                        <input readonly type="text" th:value="${product.getValue()}"><br>
+
+                            <a th:href="@{/cart/updateDown/{id}(id=${product.getKey().id})}">
+                                <button type="button">-</button>
+                            </a>
+                            <a th:href="@{/cart/updateUp/{id}(id=${product.getKey().id})}">
+                                <button type="button">+</button>
+                            </a>
+
+
+
+                    </div>
+                </div>
+                <div class="option col-2">
+                    <div class="col-12">
+                        <a th:href="@{/cart/delete(id=${product.getKey().getId()})}">
+                            <button type="button">Delete</button>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <button type="button"> Buy now</button>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+        </tbody>
+        <div class="payment col-12">
+            <button type="submit">Total payment</button>
+        </div>
+        <div class="total col-12">
+            <div class="col-12" th:if="${result!= null && result != ''}"><span th:text="${result+' VND '}"></span></div>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>

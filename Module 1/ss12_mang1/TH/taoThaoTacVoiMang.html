@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding-top: 100px;
+        }
+
+        button {
+            border-radius: 20px;
+            width: 100px;
+            height: 40px;
+        }
+
+        input {
+            border-radius: 20px;
+            width: 300px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+<input type="text" id="data">
+<button type="button" onclick="add()">Add</button>
+<button type="button" onclick="display()">Display</button>
+<br>
+<hr width="600px" align="left">
+<div id="result"></div>
+</body>
+<script>
+    let mang = Array();
+    let i = 0;
+
+    function add() {
+        mang[i] = document.getElementById('data').value;
+        alert("Element " + mang[i] + "added in index: " + i);
+        i++;
+        document.getElementById('data').value = '';
+    }
+
+    function display() {
+        let a;
+        for (let i = 0; i < mang.length; i++) {
+            a += "<br>Element " + i + "=" + mang[i] + "</br>";
+        }
+        document.getElementById('result').innerHTML = a;
+    }
+</script>
+</html>

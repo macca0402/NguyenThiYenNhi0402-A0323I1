@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--// Hiển thị giá trị của biến-->
+<span th:text="${name}"></span>
+<table th:object="${cust}" border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+    </tr>
+    <tr>
+<!--        // Hiển thị giá trị của thuộc tính-->
+        <td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+    </tr>
+</table>
+<!--Hiển thị biểu thức url  -->
+<!--https://statusneo.com/from-pixels-to-reality-how-ai-generated-images-are-revolutionizing-industries/-->
+<a th:href="@{https://statusneo.com/from-pixels-to-reality-how-ai-generated-images-are-revolutionizing-industries/}">Click go home</a>
+</body>
+</html>

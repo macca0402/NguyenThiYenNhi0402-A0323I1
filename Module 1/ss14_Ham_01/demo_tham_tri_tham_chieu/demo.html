@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function change1(a) {
+        a ++;
+        console.log("giá trị trong hàm "+ a);//11
+    }
+    let x = 10;
+    console.log("x trước khi gọi hàm : " + x);//10
+    change1(x);
+    console.log("x sau khi gọi hàm : " + x);// 10
+    function change2(arr) {
+        arr[0]=100;
+        console.log("giá trị trong hàm "+ arr);
+    }
+    let array = [1,2];
+    console.log("array trước khi gọi hàm : " + array);
+    change2(array);
+    console.log("array sau khi gọi hàm : " + array);
+</script>
+</body>
+</html>

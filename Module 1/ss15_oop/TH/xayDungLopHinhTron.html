@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius) {
+            this._radius = radius;
+
+        }
+
+        getRadius() {
+            return this._radius;
+        }
+
+        setRadius(value) {
+            this._radius = value;
+        }
+
+        circle() {
+
+        }
+
+        getArea() {
+            return Math.PI * Math.pow(this._radius, 2);
+        }
+
+        toString() {
+            return "Dien tich hinh tron ban kinh " + this.getRadius() + " la: " + this.getArea();
+        }
+    }
+
+    let tronVo = new Circle(90);
+    alert(tronVo.toString());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr =[
+        [4,3,6],
+        [7,11,4],
+        [24,6,8]
+    ]
+
+    let arr2 = new Array(3);
+    for (let i = 0; i <arr2.length ; i++) {
+        arr2[i]= new Array(3);
+    }
+    // dùng 2 vòng lặp for lồng nhau để duyệt mảng 2 chiều
+    for (let i = 0; i <arr.length ; i++) {
+        for (let j = 0; j <arr[i].length ; j++) {
+            document.write(arr[i][j] + ",");
+        }
+        document.write("<br>");
+    }
+    // tính tổng các số lẻ có trong mảng 2 chiều
+    let sum=0;
+    for (let i = 0; i <arr.length ; i++) {
+        for (let j = 0; j <arr[i].length ; j++) {
+            if (arr[i][j]%2!=0){
+                sum+=arr[i][j]
+            }
+        }
+
+    }
+    alert("tổng các số lẻ có trong mảng " + sum);
+</script>
+</body>
+</html>

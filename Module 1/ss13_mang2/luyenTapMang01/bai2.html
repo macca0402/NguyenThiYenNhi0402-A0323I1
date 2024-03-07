@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+-->
+<body>
+<script>
+    let mangN = [4, 45, 67, 57, 475, 7, 347, 23, 3, 5];
+    let max = mangN[0], vitri = -1;
+    for (let i = 0; i < mangN.length; i++) {
+        if (mangN[i] > max) {
+            max = mangN[i];
+            vitri = mangN.indexOf(mangN[i]);
+        }
+    }
+    alert('Gia tri lon nhat : ' + max + "\nVi tri cua gia tri max: " + vitri);
+</script>
+
+</body>
+</html>

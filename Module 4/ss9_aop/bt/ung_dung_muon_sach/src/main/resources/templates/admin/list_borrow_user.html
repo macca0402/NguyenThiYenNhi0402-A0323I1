@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sách mượn sách</h1>
+<div th:insert="~{home/header::header_admin}"></div>
+<table border="5">
+    <tr>
+        <th>Mã mượn sách</th>
+        <th>Tên sách</th>
+    </tr>
+    <tr th:each="b:${borrowList}">
+        <td th:text="${b.codeBorrow}"></td>
+        <td th:text="${b.book.name}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

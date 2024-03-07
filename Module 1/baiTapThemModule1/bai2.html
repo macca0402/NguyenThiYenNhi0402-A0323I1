@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhap chuoi:");
+    let mangChuoi = new Array();
+    let mangTat = new Array();
+    mangChuoi = chuoi.split('');
+    let sum = 1;
+
+    function demTu(mang) {
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i] != " " && mang[i + 1] == " ") {
+                sum++;
+            }
+        }
+        return sum;
+    }
+
+
+    function vietTat(mang) {
+        if (demTu(mang) >= 2) {
+            for (let i = 0; i < mangChuoi.length; i++) {
+                if (mangChuoi[0] != " ") {
+                    mangChuoi[0] = mangChuoi[0].toUpperCase();
+
+                }
+                if (mangChuoi[i] == " " && mangChuoi[i + 1] != " ") {
+                    mangChuoi[i + 1] = mangChuoi[i + 1].toUpperCase();
+                }
+            }
+
+        } else if (demTu(mang) == 1) {
+            alert("Chuoi chi co 1 tu nen khong can viet tat.")
+        }
+        for (let i = 0; i < mangChuoi.length; i++) {
+            if (mangChuoi[i] >= 'A' && mangChuoi[i] <= 'Z') {
+                mangTat.push(mangChuoi[i]);
+            }
+        }
+
+        mangTat = mangTat.join("");
+        document.writeln("Chuoi sau khi chuyen: " + mangTat);
+    }
+
+    vietTat(mangChuoi);
+
+
+</script>
+
+</body>
+</html>

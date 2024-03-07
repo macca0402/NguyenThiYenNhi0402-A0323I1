@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Create Record</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        body {
+            color: #495057;
+            font-family: 'Roboto', sans-serif;
+            background: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0 20px rgba(0,0,0,.1);
+        }
+        .card-header {
+            background-color: pink;
+            color: white;
+            border-bottom: none;
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .create-btn {
+            padding: 10px 20px;
+            background-color: pink;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .create-btn:hover {
+            background-color: pink;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Tạo dự án</h5>
+        </div>
+        <div class="card-body">
+
+            <form th:action="@{/doCreate}" method="post" th:object="${tinTuc}">
+                <div class="form-group">
+                    <label >Tiêu đề </label>
+                    <input th:field="*{tieuDe}" type="text" class="form-control"  >
+                    <span th:if="${#fields.hasErrors('tieuDe')}" th:errors="*{tieuDe}"></span><br>
+                </div>
+
+                <div class="form-group">
+                    <label >Danh mục :</label>
+                    <select th:field="*{danhMuc.id}">
+                        <option th:each="d:${danhMuc}" th:value="${d.id}" th:text="${d.tenDoanhMuc}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Nội dụng :</label>
+                    <textarea th:field="*{noiDung}" maxlength="500" cols="10" rows="10" type="text" class="form-control" id="city" />
+                  <span th:if="${#fields.hasErrors('noiDung')}" th:errors="*{noiDung}"></span><br>
+                </div>
+
+
+                <div class="form-group">
+                    <label >Ngày đăng tin </label>
+                    <input th:field="*{ngayDang}" type="date" class="form-control"  >
+                    <span th:if="${#fields.hasErrors('ngayDang')}" th:errors="*{ngayDang}"></span><br>
+                </div>
+
+                <div class="form-group">
+                    <label >Phóng viên </label>
+                    <input th:field="*{phongVien}" type="text" class="form-control" maxlength="50" >
+                    <span th:if="${#fields.hasErrors('phongVien')}" th:errors="*{phongVien}"></span><br>
+                </div>
+                <button type="submit" class="btn btn-success create-btn">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

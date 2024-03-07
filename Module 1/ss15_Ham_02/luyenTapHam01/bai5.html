@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let mang2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    alert(mang1);
+    let n = prompt("Nhap vao ten sao: ");
+
+    function findStar() {
+        let x = false;
+        for (let i = 0; i < mang1.length; i++) {
+            if (mang1[i] == n) {
+                alert(mang2[i]);
+                x = true;
+            } else {
+
+            }
+        }
+        if (x == false) {
+            alert("Khong tim thay.")
+        }
+    }
+
+    alert(findStar(n));
+
+
+</script>
+
+</body>
+</html>

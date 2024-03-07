@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = 'aabcc';
+    let s2 = 'adcaa';
+    let mangS1 = new Array();
+    let mangS2 = new Array();
+    let mangS3 = new Array();
+    mangS1 = s1.split('');
+    mangS2 = s2.split('');
+    console.log(mangS1);
+    console.log(mangS2);
+    for (let i = 0; i < mangS1.length; i++) {
+        for (let j = 0; j < mangS2.length; j++) {
+            if (mangS1[i] === mangS2[j]) {
+                mangS3.push(mangS1[i]);
+                mangS2.splice(j, 1);
+                break;
+            }
+        }
+    }
+    console.log(mangS3);
+    console.log("So phan tu chung cua s1 va s2: " + mangS3.length);
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = prompt("Enter salary of employer: ");
+    let tax;
+
+    function findTax(salary) {
+        if (salary > 15) {
+            tax = salary * 0.2;
+        } else if (salary >= 7 && salary <= 15) {
+            tax = salary * 0.1;
+        } else if (salary < 7) {
+            tax = salary * 0.05;
+        }
+        return tax;
+    }
+
+    function netSalary() {
+        let netSalary = salary - findTax(salary);
+        return netSalary + " trieu ";
+    }
+
+    alert("Luong rong cua nhan vien: " + netSalary());
+</script>
+
+</body>
+</html>

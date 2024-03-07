@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tienThuNhap = +prompt("Nhap tien thu nhap ca nhan: ");
+    let thueThuNhap;
+    if (tienThuNhap <= 4000000) {
+        thueThuNhap = tienThuNhap * 0.0;
+        alert("Thue thu nhap ca nhan : " + thueThuNhap);
+    } else if (tienThuNhap <= 9000000) {
+        thueThuNhap = tienThuNhap * 0.1;
+        alert("Thue thu nhap ca nhan : " + thueThuNhap);
+    } else if (tienThuNhap < 14000000) {
+        thueThuNhap = tienThuNhap * 0.15;
+        alert("Thue thu nhap ca nhan : " + thueThuNhap);
+    } else if (tienThuNhap <= 24000000) {
+        thueThuNhap = tienThuNhap * 0.2;
+        alert("Thue thu nhap ca nhan : " + thueThuNhap);
+    } else if (tienThuNhap <= 44000000) {
+        thueThuNhap = tienThuNhap * 0.25;
+        alert("Thue thu nhap ca nhan : " + thueThuNhap);
+    } else if (tienThuNhap <= 84000000) {
+        thueThuNhap = tienThuNhap * 0.3;
+        alert("Thue thu nhap ca nhan : " + thueThuNhap);
+    } else if (tienThuNhap >= 84000000) {
+        thueThuNhap = tienThuNhap * 0.35;
+        alert("Thue thu nhap ca nhan : " + thueThuNhap);
+    }
+</script>
+
+</body>
+</html>
